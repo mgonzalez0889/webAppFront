@@ -67,19 +67,67 @@ export class TemplateComponent implements OnInit {
         child: true,
         childrens:[
           {
-            descripcion:'Aulas',
-            link:'/academico/'
+            descripcion: 'Aulas',
+            link:'/academico/components/aulas'
+          },
+
+          {
+            descripcion:'Docentes',
+            link:'/academico/components/docentes'
+          },
+
+
+          {
+            descripcion: 'Estudiantes',
+            link:'/academico/components/estudiantes'
+          },
+
+          {
+            descripcion: 'Grados',
+            link:'/academico/components/grados'
+          },
+
+          {
+            descripcion: 'Materias',
+            link:'/academico/components/materias'
+          },
+
+        ],
+      },
+
+      {
+
+        descripcion:'Administracion',
+        link:'',
+        child: true,
+        childrens:[
+          
+          {
+
+            descripcion:'Modulos',
+            link:'/administracion/components/modulos',
+
+          },
+
+          {
+
+            descripcion:'Roles',
+            link:'/administracion/components/roles',
+
+          },
+
+          {
+
+            descripcion:'Usuarios',
+            link:'/administracion/components/usuarios',
+
           }
-
-
-
-
-
-        ]
-
-
+           
+          ]
 
       }
+
+
 
 
       
