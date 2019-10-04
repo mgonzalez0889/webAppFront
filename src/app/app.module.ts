@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { TemplateComponent } from './thema/template/template.component';
+import { NavbarComponent } from './thema/navbar/navbar.component';
+import { ContenidoComponent } from './thema/contenido/contenido.component';
+import { SidebarComponent } from './thema/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
-    TemplateComponent
+    TemplateComponent,
+    NavbarComponent,
+    ContenidoComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

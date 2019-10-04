@@ -7,8 +7,19 @@ import { TemplateComponent } from './thema/template/template.component';
 const routes: Routes = [
   
   {
+    path: 'academico',
+    loadChildren: './academico/academico.module#AcademicoModule'
+
+  },
+  {
+    path:'administracion',
+    loadChildren: './administracion/administracion.module#AdministracionModule'
+
+  },
+
+  {
     path:'auth',
-      loadChildren: './auth/auth.module#AuthModule'
+    loadChildren: './auth/auth.module#AuthModule'
   }, 
   
   {
@@ -16,17 +27,19 @@ const routes: Routes = [
     component:TemplateComponent,  
     children: [
       {
-        path:'biblioteca', loadChildren: './pages/biblioteca/biblioteca.module#BibliotecaModule'
+        path:'biblioteca', 
+        loadChildren: './pages/biblioteca/biblioteca.module#BibliotecaModule'
       }
   ]
 },
   {
     path:'**',
-    children:[
-    {
-      path:'**', component: NotFoundComponent
-    }
-  ]
+      children:[
+      {
+        path:'**', 
+        component: NotFoundComponent
+      }
+    ]
   },
 
 

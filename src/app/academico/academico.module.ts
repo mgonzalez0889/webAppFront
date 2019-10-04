@@ -10,7 +10,11 @@ import { AulasComponent } from './aulas/aulas.component';
 
 
 @NgModule({
-  declarations: [DocentesComponent, EstudiantesComponent, MateriasComponent, GradosComponent, AulasComponent],
+  declarations: [DocentesComponent,
+     EstudiantesComponent, 
+     MateriasComponent, 
+     GradosComponent, 
+     AulasComponent],
   imports: [
     CommonModule,
     AcademicoRoutingModule

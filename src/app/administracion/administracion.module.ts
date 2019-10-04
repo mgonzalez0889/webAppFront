@@ -8,7 +8,10 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 @NgModule({
-  declarations: [ModulosComponent, RolesComponent, UsuariosComponent],
+  declarations: [
+    ModulosComponent, 
+    RolesComponent, 
+    UsuariosComponent],
   imports: [
     CommonModule,
     AdministracionRoutingModule
