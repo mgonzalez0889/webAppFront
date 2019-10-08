@@ -13,25 +13,24 @@
                             </span>
                     </div>
                 </li>
-                <li>
-                    <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="#">Second Level Item</a>
+                <ul class="nav nav-second-level">
+                    <ng-container *ngFor="let option of menu">                    
+                        <li *ngIf="!option.child">
+                            <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> {{ option.descripcion }} </a>
                         </li>
-                        <li>
-                            <a href="#">Third Level <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                            </ul>
+
+                        <li *ngIf="option.child">
+                            
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>  {{ option.descripcion }}  <span class="fa arrow"></span></a>
+                            
+                                    <ul class="nav nav-second-level" *ngFor="let item of option.childrens">
+                                        <li>
+                                            <a [routerLink]="item.link"> {{ item.descripcion }} </a>
+                                        </li>                       
+                                    </ul>               
                         </li>
-                    </ul>
-                </li>
+                    </ng-container>
+              </ul>
             </ul>
 
         </div>

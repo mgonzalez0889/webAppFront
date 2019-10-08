@@ -6,14 +6,27 @@ import { TemplateComponent } from './thema/template/template.component';
 
 const routes: Routes = [
   
-  {
-    path: 'academico',
-    loadChildren: './academico/academico.module#AcademicoModule'
+   {
+     path: 'pages',
+     component:TemplateComponent,    
+     children:[
+      {
+        path:'academico',
+        loadChildren: './pages/academico/academico.module#AcademicoModule',
+      }
 
-  },
+     ]
+
+   },
   {
-    path:'administracion',
-    loadChildren: './administracion/administracion.module#AdministracionModule'
+    path:'pages',
+    component: TemplateComponent,
+    children:[
+      {
+        path:'administracion',
+        loadChildren: './pages/administracion/administracion.module#AdministracionModule'
+      }      
+    ]
 
   },
 

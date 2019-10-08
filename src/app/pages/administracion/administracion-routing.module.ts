@@ -1,17 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModulosComponent } from './modulos/modulos.component';
 import { RolesComponent } from './roles/roles.component';
+import { ModulosComponent } from './modulos/modulos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
-
 const routes: Routes = [
-
-  {
-    path:'modulos',
-    component: ModulosComponent
-  },
 
   {
     path:'roles',
@@ -19,9 +13,15 @@ const routes: Routes = [
   },
 
   {
+    path:'modulos',
+    component: ModulosComponent
+  },
+
+  {
     path:'usuarios',
     component: UsuariosComponent
   }
+
 
 
 ];

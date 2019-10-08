@@ -9,12 +9,35 @@ import { TipoComponent } from './tipo/tipo.component';
 
 
 const routes: Routes = [
-  {path: 'editorial', component: EditorialComponent},
-  {path: 'autores', component: AutoresComponent},
-  {path: 'areas', component: AreasComponent},
-  {path: 'existencia', component: ExistenciaComponent},
-  {path: 'libro' ,component: LibroComponent},
-  {path: 'tipo', component: TipoComponent},
+  {
+   path: 'editorial', 
+   component: EditorialComponent
+  },
+  
+  {
+   path: 'autores', 
+   component: AutoresComponent
+  },
+  
+  {
+   path: 'areas', 
+   component: AreasComponent
+  },
+  
+  {
+   path: 'existencia', 
+   component: ExistenciaComponent
+  },
+  
+  {
+  path: 'libro' ,
+  component: LibroComponent
+  },
+  
+  {
+  path: 'tipo', 
+  component: TipoComponent
+  },
 
 ];
 
