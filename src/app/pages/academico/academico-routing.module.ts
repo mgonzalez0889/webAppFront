@@ -10,31 +10,31 @@ import { MateriasComponent } from './materias/materias.component';
 const routes: Routes = [
 
   {
-    path:'aulas',
+    path: 'aulas',
     component: AulasComponent
 
   },
 
   {
-    path:'docentes',
+    path: 'docentes',
     component: DocentesComponent
 
   },
 
   {
-    path:'estudiantes',
+    path: 'estudiantes',
     component: EstudiantesComponent
 
   },
 
   {
-    path:'grados',
+    path: 'grados',
     component: GradosComponent
 
   },
 
   {
-    path:'materias',
+    path: 'materias',
     component: MateriasComponent
 
   }

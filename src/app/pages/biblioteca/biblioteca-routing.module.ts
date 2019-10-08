@@ -10,32 +10,32 @@ import { TipoComponent } from './tipo/tipo.component';
 
 const routes: Routes = [
   {
-   path: 'editorial', 
+   path: 'editorial',
    component: EditorialComponent
   },
-  
+
   {
-   path: 'autores', 
+   path: 'autores',
    component: AutoresComponent
   },
-  
+
   {
-   path: 'areas', 
+   path: 'areas',
    component: AreasComponent
   },
-  
+
   {
-   path: 'existencia', 
+   path: 'existencia',
    component: ExistenciaComponent
   },
-  
+
   {
-  path: 'libro' ,
+  path: 'libro',
   component: LibroComponent
   },
-  
+
   {
-  path: 'tipo', 
+  path: 'tipo',
   component: TipoComponent
   },
 

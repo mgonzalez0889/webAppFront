@@ -5,13 +5,13 @@ import { TemplateComponent } from './thema/template/template.component';
 
 
 const routes: Routes = [
-  
+
    {
      path: 'pages',
-     component:TemplateComponent,    
-     children:[
+     component: TemplateComponent,
+     children: [
       {
-        path:'academico',
+        path: 'academico',
         loadChildren: './pages/academico/academico.module#AcademicoModule',
       }
 
@@ -19,37 +19,37 @@ const routes: Routes = [
 
    },
   {
-    path:'pages',
+    path: 'pages',
     component: TemplateComponent,
-    children:[
+    children: [
       {
-        path:'administracion',
+        path: 'administracion',
         loadChildren: './pages/administracion/administracion.module#AdministracionModule'
-      }      
+      }
     ]
 
   },
 
   {
-    path:'auth',
+    path: 'auth',
     loadChildren: './auth/auth.module#AuthModule'
-  }, 
-  
+  },
+
   {
-    path:'pages', 
-    component:TemplateComponent,  
+    path: 'pages',
+    component: TemplateComponent,
     children: [
       {
-        path:'biblioteca', 
+        path: 'biblioteca',
         loadChildren: './pages/biblioteca/biblioteca.module#BibliotecaModule'
       }
   ]
 },
   {
-    path:'**',
-      children:[
+    path: '**',
+      children: [
       {
-        path:'**', 
+        path: '**',
         component: NotFoundComponent
       }
     ]

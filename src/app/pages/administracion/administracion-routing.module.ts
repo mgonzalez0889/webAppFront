@@ -8,17 +8,17 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 const routes: Routes = [
 
   {
-    path:'roles',
+    path: 'roles',
     component: RolesComponent
   },
 
   {
-    path:'modulos',
+    path: 'modulos',
     component: ModulosComponent
   },
 
   {
-    path:'usuarios',
+    path: 'usuarios',
     component: UsuariosComponent
   }
 

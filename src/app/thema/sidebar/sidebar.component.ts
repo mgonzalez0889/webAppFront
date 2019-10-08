@@ -19,15 +19,16 @@ export class SidebarComponent implements OnInit {
 
   /**
    * Retorna la estructura del Menu
-  */
+   */
 
- getMenu(){
+ getMenu() {
 
   return [
-    
+
     {
       descripcion: 'Dashboard',
       link: '/pages/dashboard',
+      icon: 'fas fa-book-open',
       child: false,
       childrens: []
 
@@ -36,6 +37,7 @@ export class SidebarComponent implements OnInit {
     {
       descripcion: 'Biblioteca',
       link: '',
+      icon: 'fas fa-book-open',
       child: true,
       childrens: [
 
@@ -53,7 +55,7 @@ export class SidebarComponent implements OnInit {
 
         {
           descripcion: 'Libros',
-          link: '/pages/biblioteca/libro'  
+          link: '/pages/biblioteca/libro'
         }
 
       ]
@@ -62,33 +64,34 @@ export class SidebarComponent implements OnInit {
 
     {
 
-      descripcion:'Academico',
-      link:'',
+      descripcion: 'Academico',
+      link: '',
+      icon: 'fas fa-book-reader',
       child: true,
-      childrens:[
+      childrens: [
         {
           descripcion: 'Aulas',
-          link:'/pages/academico/aulas'
+          link: '/pages/academico/aulas'
         },
 
         {
-          descripcion:'Docentes',
-          link:'/pages/academico/docentes'
+          descripcion: 'Docentes',
+          link: '/pages/academico/docentes'
         },
 
         {
           descripcion: 'Estudiantes',
-          link:'/pages/academico/estudiantes'
+          link: '/pages/academico/estudiantes'
         },
 
         {
           descripcion: 'Grados',
-          link:'/pages/academico/grados'
+          link: '/pages/academico/grados'
         },
 
         {
           descripcion: 'Materias',
-          link:'/pages/academico/materias'
+          link: '/pages/academico/materias'
         },
 
       ],
@@ -96,36 +99,35 @@ export class SidebarComponent implements OnInit {
 
     {
 
-      descripcion:'Administracion',
-      link:'',
+      descripcion: 'Administracion',
+      link: '',
+      icon: 'fas fa-users-cog',
       child: true,
-      childrens:[
-        
+      childrens: [
+
         {
 
-          descripcion:'Modulos',
-          link:'/pages/administracion/modulos',
+          descripcion: 'Modulos',
+          link: '/pages/administracion/modulos',
 
         },
 
         {
 
-          descripcion:'Roles',
-          link:'/pages/administracion/roles',
+          descripcion: 'Roles',
+          link: '/pages/administracion/roles',
 
         },
 
         {
-
-          descripcion:'Usuarios',
-          link:'/pages/administracion/usuarios',
-
+          descripcion: 'Usuarios',
+          link: '/pages/administracion/usuarios',
         }
-         
+
         ]
 
     }
-    
+
   ];
 
 }
