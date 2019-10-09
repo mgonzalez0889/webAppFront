@@ -16,12 +16,12 @@
                 <ul class="nav nav-second-level">
                     <ng-container *ngFor="let option of menu">
                         <li *ngIf="!option.child">
-                            <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> {{ option.descripcion }} </a>
+                            <a routerLink="/pages" class="active"><i class="{{ option.icon }}"></i> {{ option.descripcion }} </a>
                         </li>
 
                         <li *ngIf="option.child">
 
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>  {{ option.descripcion }}  <span class="fa arrow"></span></a>
+                            <a href="#"><i class="{{ option.icon }}"></i>  {{ option.descripcion }}  <span class="fa arrow"></span></a>
 
                                     <ul class="nav nav-second-level" *ngFor="let item of option.childrens">
                                         <li>

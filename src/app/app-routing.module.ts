@@ -25,7 +25,7 @@ const routes: Routes = [
       {
         path: 'administracion',
         loadChildren: './pages/administracion/administracion.module#AdministracionModule'
-      }
+      },
     ]
 
   },

@@ -28,7 +28,7 @@ export class SidebarComponent implements OnInit {
     {
       descripcion: 'Dashboard',
       link: '/pages/dashboard',
-      icon: 'fas fa-book-open',
+      icon: 'fas fa-tachometer-alt',
       child: false,
       childrens: []
 
