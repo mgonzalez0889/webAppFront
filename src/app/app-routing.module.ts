@@ -46,6 +46,17 @@ const routes: Routes = [
   ]
 },
   {
+    path: 'pages',
+    component: TemplateComponent,
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: './pages/dashboard/dashboard.module#DashboardModule'
+      }
+    ]
+  },
+
+  {
     path: '**',
       children: [
       {

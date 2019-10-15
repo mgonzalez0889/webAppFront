@@ -8,6 +8,7 @@ import { TemplateComponent } from './thema/template/template.component';
 import { NavbarComponent } from './thema/navbar/navbar.component';
 import { ContenidoComponent } from './thema/contenido/contenido.component';
 import { SidebarComponent } from './thema/sidebar/sidebar.component';
+import { FooterComponent } from './thema/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SidebarComponent } from './thema/sidebar/sidebar.component';
     TemplateComponent,
     NavbarComponent,
     ContenidoComponent,
-    SidebarComponent
+    SidebarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

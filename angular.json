@@ -25,13 +25,9 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/assets/css/bootstrap.min.css",
-              "src/assets/css/metisMenu.min.css",
-              "src/assets/css/timeline.css",
-              "src/assets/css/startmin.css",
-              "src/assets/css/morris.css",
-              "src/assets/css/font-awesome.min.css"
-              
+              "src/assets/vendor/fontawesome-free/css/all.min.css",
+              "src/assets/css/sb-admin-2.min.css"
+
             ],
             "scripts": []
           },
