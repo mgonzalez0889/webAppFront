@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudEditorialComponent implements OnInit {
 
+  public codigo: string;
+  public descripcion: string;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
+
+
 
 }

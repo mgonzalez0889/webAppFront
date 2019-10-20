@@ -9,6 +9,7 @@ import { NavbarComponent } from './thema/navbar/navbar.component';
 import { ContenidoComponent } from './thema/contenido/contenido.component';
 import { SidebarComponent } from './thema/sidebar/sidebar.component';
 import { FooterComponent } from './thema/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { FooterComponent } from './thema/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
