@@ -18,12 +18,32 @@ import { CrudGradosComponent } from './grados/components/crud-grados/crud-grados
 import { CrudMateriasComponent } from './materias/components/crud-materias/crud-materias.component';
 import { ListarMateriasComponent } from './materias/components/listar-materias/listar-materias.component';
 
+// Formularios
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
-  declarations: [DocentesComponent, EstudiantesComponent, AulasComponent, GradosComponent, MateriasComponent, CrudAulasComponent, ListarAulasComponent, ListarDocentesComponent, CrudDocentesComponent, CrudEstudiantesComponent, ListarEstudiantesComponent, ListarGradosComponent, CrudGradosComponent, CrudMateriasComponent, ListarMateriasComponent],
+  declarations: [DocentesComponent,
+    EstudiantesComponent,
+    AulasComponent,
+    GradosComponent,
+    MateriasComponent,
+    CrudAulasComponent,
+    ListarAulasComponent,
+    ListarDocentesComponent,
+    CrudDocentesComponent,
+    CrudEstudiantesComponent,
+    ListarEstudiantesComponent,
+    ListarGradosComponent,
+    CrudGradosComponent,
+    CrudMateriasComponent,
+    ListarMateriasComponent],
   imports: [
     CommonModule,
-    AcademicoRoutingModule
+    AcademicoRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+
   ]
 })
 export class AcademicoModule { }

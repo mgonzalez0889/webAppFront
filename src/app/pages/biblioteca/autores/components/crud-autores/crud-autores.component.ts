@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-crud-autores',
@@ -6,10 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crud-autores.component.css']
 })
 export class CrudAutoresComponent implements OnInit {
+    // 1) declarar prpiead tipo formsgrup
+    public autores: FormGroup;
 
-  constructor() { }
+    // 2) inyectar form buider en el constructor
+    constructor(private fb: FormBuilder) {
+      this.createForm();
+    }
 
-  ngOnInit() {
+    ngOnInit() {
+    }
+
+    createForm() {
+      this.autores = this.fb.group({
+        codigo: ['',
+          Validators.required,
+          Validators.maxLength(5)
+        ],
+        autores: ['']
+
+      });
+
+    }
+
   }
-
-}

@@ -10,6 +10,7 @@ import { ContenidoComponent } from './thema/contenido/contenido.component';
 import { SidebarComponent } from './thema/sidebar/sidebar.component';
 import { FooterComponent } from './thema/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GenericoComponent } from './shared/generico/generico.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     ContenidoComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    GenericoComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [],
+  exports: [
+    GenericoComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
