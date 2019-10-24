@@ -1,16 +1,36 @@
-<form  [formGroup]="autores">
-  {{ autores.value | json }}
-  <div class="form-group">
-    <label >Codigo</label> {{ codigo }}
-    <input type="text" class="form-control"  formControlName="codigo" name="codigo">
-    <small class="form-text msgerror">Codigo requerido</small>
+<form  [formGroup]="autores" (ngSubmit)="saveAutores(autores)">
+<!--  {{ autores.value | json }}-->
+  <div class="form-group row" [ngClass]="{ 'has-danger': !autores.get('codigo').valid }">
+    <label >Codigo</label>
+    <input type="text" class="form-control"
+           formControlName="codigo"
+           placeholder="codigo">
+        <div  *ngIf="autores.controls['codigo'].errors?.required"
+               class="form-control-feedback">
+                El codigo es requerido
+        </div>
+        <div  *ngIf="autores.controls['codigo'].errors?.required"
+              class="form-control-feedback">
+              El codigo minimo son 6 numeros
+        </div>
   </div>
-  <div class="form-group">
-    <label >Nombre autores</label> {{ descripcion }}
-    <input type="text" class="form-control"  formControlName="autores" name="autores">
-    <small class="form-text msgerror">Descripcion requerida</small>
+
+  <div class="form-group" [ngClass]="{ 'has-danger': !autores.get('nombreAutores').valid }">
+    <label >Nombre autores</label>
+    <input type="text"
+           class="form-control"
+           formControlName="nombreAutores"
+           placeholder="Nombre autores">
+        <div  *ngIf="autores.controls['nombreAutores'].errors?.required"
+              class="form-control-feedback">
+          El nombre es requerido
+        </div>
+        <div  *ngIf="autores.controls['nombreAutores'].errors?.required"
+              class="form-control-feedback">
+          El nombre minimo son 10 caracteres
+        </div>
   </div>
 
   <button type="submit" class="btn btn-outline-danger">Cancelar</button> &nbsp;
-  <button type="submit" class="btn btn-outline-success">Guardar</button>
+  <button type="submit" class="btn btn-outline-success" [disabled]="!autores.valid" >Guardar</button>
 </form>

@@ -13,21 +13,33 @@ export class CrudAutoresComponent implements OnInit {
     // 2) inyectar form buider en el constructor
     constructor(private fb: FormBuilder) {
       this.createForm();
+
     }
 
     ngOnInit() {
+
     }
 
     createForm() {
       this.autores = this.fb.group({
-        codigo: ['',
+        codigo: ['', [
           Validators.required,
-          Validators.maxLength(5)
+          Validators.minLength(6)
+               ]
         ],
-        autores: ['']
+        nombreAutores: ['', [
+          Validators.required,
+          Validators.minLength(10)
+        ]
+      ]
 
       });
 
+    }
+
+    saveAutores(values) {
+
+    console.log(values);
     }
 
   }
