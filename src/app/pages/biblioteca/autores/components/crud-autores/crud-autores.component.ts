@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -7,10 +7,14 @@ import {FormGroup, FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./crud-autores.component.css']
 })
 export class CrudAutoresComponent implements OnInit {
-    // 1) declarar prpiead tipo formsgrup
+
+      // 1) declarar prpiead tipo formsgrup
     public autores: FormGroup;
 
-    // 2) inyectar form buider en el constructor
+    //Envia un evento al padre y este lo recibe para enviarselo a un metodo
+    @Output() cancel: EventEmitter<boolean> = new EventEmitter <boolean> ();
+
+  // 2) inyectar form buider en el constructor
     constructor(private fb: FormBuilder) {
       this.createForm();
 
@@ -41,5 +45,13 @@ export class CrudAutoresComponent implements OnInit {
 
     console.log(values);
     }
+
+    cancelAction() {
+      this.cancel.emit(true);
+    }
+
+
+
+
 
   }
