@@ -11,6 +11,8 @@ import { SidebarComponent } from './thema/sidebar/sidebar.component';
 import { FooterComponent } from './thema/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenericoComponent } from './shared/generico/generico.component';
+import { AgGridModule } from 'ag-grid-angular';
+
 
 @NgModule({
   declarations: [
@@ -22,12 +24,16 @@ import { GenericoComponent } from './shared/generico/generico.component';
     SidebarComponent,
     FooterComponent,
     GenericoComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserModule,
+    AgGridModule.withComponents([])
+
   ],
   providers: [],
   exports: [

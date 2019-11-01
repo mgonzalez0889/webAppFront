@@ -5,6 +5,7 @@
       <button type="button" [disabled]="enableBtn" class="btn btn-outline-info btn-sm" (click)="addNewAutores()">Editar</button> &nbsp;
       <button type="button" [disabled]="enableBtn" class="btn btn-outline-danger btn-sm" (click)="addNewAutores()">Eliminar</button> &nbsp;
     </div>
+
     <app-listar-autores></app-listar-autores>
 
   </div>
@@ -12,7 +13,6 @@
   <div class="col-md-4">
     <app-crud-autores *ngIf="activado" (cancel)="activeAdd($event)">
     </app-crud-autores>
-
   </div>
 
 
