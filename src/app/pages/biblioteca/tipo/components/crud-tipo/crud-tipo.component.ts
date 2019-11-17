@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-crud-tipo',
@@ -6,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crud-tipo.component.css']
 })
 export class CrudTipoComponent implements OnInit {
+  generos: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.createForm();
   }
+
+  private createForm() {
+    this.generos =  this.fb.group({
+       nombres: ['', [Validators.required] ],
+       detalles: ['', [Validators.required] ]
+    });
+  }
+
+  saveGeneros() {
+
+
+  }
+
 
 }

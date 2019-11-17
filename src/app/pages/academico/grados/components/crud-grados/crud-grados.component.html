@@ -1,1 +1,53 @@
-<p>crud-grados works!</p>
+<div class="container">
+  <form  [formGroup]="grados" (ngSubmit)="saveGrados(grados)">
+    <div class="form-group row">
+      <label >Nombre</label>
+      <input type="text"
+             class="form-control"
+             [ngClass]=
+               "{'is-invalid':
+             grados.controls['nombres'].errors?.valid ||
+             grados.controls['nombres'].errors?.minlength,
+             'is-valid': !grados.controls['nombres'].errors}"
+             formControlName="nombres"
+             placeholder="Nombre completo">
+      <div class="alert-danger" *ngIf="grados.dirty || grados.touched">
+        <div  *ngIf="grados.controls['nombres'].errors?.required"
+              class="form-control-feedback">
+          El nombre es requerido
+        </div>
+        <div  *ngIf="grados.controls['nombres'].errors?.minlength"
+              class="form-control-feedback">
+          El nombre minimo son 10 caracteres
+        </div>
+      </div>
+    </div>
+   <!-- <div class="form-group row">
+      <label>Detalles</label>
+      <input type="text"
+             class="form-control"
+             [ngClass]=
+             "{'is-invalid':
+             grados.controls['detalles'].errors?.valid ||
+             grados.controls['detalles'].errors?.minlength,
+             'is-valid': !grados.controls['detalles'].errors }"
+             formControlName="detalles"
+             placeholder="Detalles">
+      <div class="alert-danger" *ngIf="grados.dirty || grados.touched">
+        <div  *ngIf="grados.controls['detalles'].errors?.required"
+              class="form-control-feedback">
+          El nombre es requerido
+        </div>
+        <div  *ngIf="grados.controls['detalles'].errors?.minlength"
+              class="form-control-feedback">
+          El nombre minimo son 10 caracteres
+        </div>
+      </div>
+    </div>-->
+    <div class="form-group row">
+      <button type="submit" class="btn btn-outline-danger" (click)="cancelAction()">Cancelar</button> &nbsp;
+      <button type="submit" class="btn btn-outline-success" [disabled]="!grados.valid" >Guardar</button>
+    </div>
+  </form>
+</div>
+

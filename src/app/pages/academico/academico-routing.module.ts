@@ -12,31 +12,22 @@ const routes: Routes = [
   {
     path: 'aulas',
     component: AulasComponent
-
   },
-
   {
     path: 'docentes',
     component: DocentesComponent
-
   },
-
   {
     path: 'estudiantes',
     component: EstudiantesComponent
-
   },
-
   {
     path: 'grados',
     component: GradosComponent
-
   },
-
   {
     path: 'materias',
     component: MateriasComponent
-
   }
 
 

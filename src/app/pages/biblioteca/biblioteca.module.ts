@@ -21,7 +21,7 @@ import { ListarLibroComponent } from './libro/components/listar-libro/listar-lib
 import { CrudLibroComponent } from './libro/components/crud-libro/crud-libro.component';
 import { CrudTipoComponent } from './tipo/components/crud-tipo/crud-tipo.component';
 import { ListarTipoComponent } from './tipo/components/listar-tipo/listar-tipo.component';
-import {AgGridModule} from "ag-grid-angular";
+import {AgGridModule} from 'ag-grid-angular';
 
 
 @NgModule({

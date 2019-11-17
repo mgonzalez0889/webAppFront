@@ -20,6 +20,14 @@ export class AutoresComponent implements OnInit {
     this.activeAdd();
   }
 
+  editAutores() {
+
+  }
+
+  deleteAutores() {
+
+  }
+
   notificacion() {
 
   }

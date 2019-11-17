@@ -1,13 +1,101 @@
-<form >
-        <div class="form-group">
-          <label >Codigo</label> {{ codigo }}
-          <input type="text" class="form-control" *ngIf="mscodigo" [(ngModel)]="codigo" name="codigo">
-          <small class="form-text msgerror">Codigo requerido</small>
-        </div>
-        <div class="form-group">
-          <label >Nombre editorial</label> {{ descripcion }}
-          <input type="text" class="form-control"  [(ngModel)]="descripcion" name="descripcion">
-        </div>
 
-        <button type="submit" class="btn btn-primary">Agregar</button>
+<div class="container">
+<form [formGroup]="editorial" (ngSubmit)="saveEditorial(editorial)" >
+        <div class="form-group row">
+          <label >Nombre editorial</label>
+          <input type="text"
+                 class="form-control"
+                 [ngClass]=
+                 "{'is-valid': !editorial.controls['nombres'].errors,
+                 'is-invalid':
+                 editorial.controls['nombres'].errors?.valid ||
+                 editorial.controls['nombres'].errors?.minlength}"
+                 formControlName="nombres"
+                 placeholder="Nombre completo editorial">
+          <div class="alert-danger" *ngIf="editorial.dirty || editorial.touched">
+            <div  *ngIf="editorial.controls['nombres'].errors?.required"
+                  class="form-control-feedback">
+              El nombre es requerido
+            </div>
+            <div  *ngIf="editorial.controls['nombres'].errors?.minlength"
+                  class="form-control-feedback">
+              El nombre minimo son 10 caracteres
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label >Numero de telefono</label>
+          <input type="text"
+                 class="form-control"
+                 [ngClass]=
+                 "{'is-valid': !editorial.controls['telefono'].errors,
+                 'is-invalid':
+                 editorial.controls['telefono'].errors?.valid ||
+                 editorial.controls['telefono'].errors?.pattern}"
+                 formControlName="telefono"
+                 placeholder="Telefono">
+          <div class="alert-danger" *ngIf="editorial.dirty || editorial.touched">
+            <div  *ngIf="editorial.controls['telefono'].errors?.required"
+                  class="form-control-feedback">
+              El numero de telefono es requerido
+            </div>
+            <div  *ngIf="editorial.controls['telefono'].errors?.pattern"
+                  class="form-control-feedback">
+              Solo se aceptan numeros y no letras
+            </div>
+            <div  *ngIf="editorial.controls['telefono'].errors?.minlength"
+                  class="form-control-feedback">
+              Minino son 7 numeros
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label>Direccion</label>
+          <input type="text"
+                 class="form-control"
+                 [ngClass]=
+                 "{'is-valid': !editorial.controls['direccion'].errors,
+                 'is-invalid':
+                 editorial.controls['direccion'].errors?.valid ||
+                 editorial.controls['direccion'].errors?.minlength}"
+                 formControlName="direccion"
+                 placeholder="Direccion de editorial">
+          <div class="alert-danger" *ngIf="editorial.dirty || editorial.touched">
+            <div  *ngIf="editorial.controls['direccion'].errors?.required"
+                  class="form-control-feedback">
+              La direccion es requerida
+            </div>
+            <div  *ngIf="editorial.controls['direccion'].errors?.minlength"
+                  class="form-control-feedback">
+              La direccion debe contener minimo 12 caracteres
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label>Email</label>
+          <input type="text"
+                 class="form-control"
+                 [ngClass]=
+                   "{'is-valid': !editorial.controls['email'].errors,
+                       'is-invalid':
+                       editorial.controls['email'].errors?.valid ||
+                       editorial.controls['email'].errors?.minlength}"
+                 formControlName="email"
+                 placeholder="Email de editorial">
+          <div class="alert-danger" *ngIf="editorial.dirty || editorial.touched">
+            <div  *ngIf="editorial.controls['email'].errors?.required"
+                  class="form-control-feedback">
+              La direccion de correo electronico es requerida
+            </div>
+            <div  *ngIf="editorial.controls['email'].errors?.pattern"
+                  class="form-control-feedback">
+              No es una direccion de correo valida
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <button type="submit" class="btn btn-outline-danger" (click)="cancelAction()">Cancelar</button>
+          <button type="submit" class="btn btn-outline-success"  [disabled]="!editorial.valid">Guardar</button>
+        </div>
 </form>
+</div>

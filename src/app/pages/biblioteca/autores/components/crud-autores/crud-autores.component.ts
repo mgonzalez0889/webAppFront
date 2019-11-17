@@ -12,7 +12,7 @@ export class CrudAutoresComponent implements OnInit {
     public autores: FormGroup;
 
     //Envia un evento al padre y este lo recibe para enviarselo a un metodo
-    @Output() cancel: EventEmitter<boolean> = new EventEmitter <boolean> ();
+    @Output() cancelar: EventEmitter<boolean> = new EventEmitter <boolean> ();
 
   // 2) inyectar form buider en el constructor
     constructor(private fb: FormBuilder) {
@@ -26,19 +26,12 @@ export class CrudAutoresComponent implements OnInit {
 
     createForm() {
       this.autores = this.fb.group({
-        codigo: ['', [
-          Validators.required,
-          Validators.minLength(6)
-               ]
-        ],
-        nombreAutores: ['', [
-          Validators.required,
-          Validators.minLength(10)
+        /*codigo: ['', [Validators.required, Validators.minLength(3)]
+        ],*/
+        nombreAutores: ['', [Validators.required,Validators.minLength(10)]
         ]
-      ]
 
       });
-
     }
 
     saveAutores(values) {
@@ -46,8 +39,10 @@ export class CrudAutoresComponent implements OnInit {
     console.log(values);
     }
 
+
+
     cancelAction() {
-      this.cancel.emit(true);
+      this.cancelar.emit(true);
     }
 
 

@@ -12,6 +12,8 @@ import { FooterComponent } from './thema/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenericoComponent } from './shared/generico/generico.component';
 import { AgGridModule } from 'ag-grid-angular';
+import {HttpClientModule} from '@angular/common/http';
+import {CategoryGradeService} from './data/category-grade.service';
 
 
 @NgModule({
@@ -32,10 +34,11 @@ import { AgGridModule } from 'ag-grid-angular';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
+    HttpClientModule,
     AgGridModule.withComponents([])
 
   ],
-  providers: [],
+  providers: [CategoryGradeService],
   exports: [
     GenericoComponent
   ],

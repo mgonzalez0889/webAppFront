@@ -15,7 +15,10 @@ export class EditorialComponent implements OnInit {
   ngOnInit() {
   }
 
+  refresh(e) {
 
+    alert('Exito');
+  }
 
 
 

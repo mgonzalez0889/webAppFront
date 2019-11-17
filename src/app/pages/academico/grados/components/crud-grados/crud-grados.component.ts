@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-crud-grados',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crud-grados.component.css']
 })
 export class CrudGradosComponent implements OnInit {
+  @Output() cancelar: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() { }
+  grados: FormGroup;
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+  }
+
+
+  private createForm() {
+    this.grados = this.fb.group({
+      nombres: ['', [Validators.required, Validators.minLength(10) ]]
+
+    });
+  }
+
+  cancelAction() {
+
+    this.cancelar.emit(true);
+
   }
 
 }

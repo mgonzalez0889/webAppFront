@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CategoryGradeService} from '../../../../../data/category-grade.service';
 
 @Component({
   selector: 'app-listar-editorial',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarEditorialComponent implements OnInit {
 
-  constructor() { }
+  constructor(protected service: CategoryGradeService) { }
+  categories: any;
 
   ngOnInit() {
+  this.getEditorials();
   }
 
-}
+  getEditorials() {
+    this.service.getCategoryGrades()
+      .subscribe(resp => {
+        this.categories = resp;
+      });
+
+  }
+
+  }
+
+

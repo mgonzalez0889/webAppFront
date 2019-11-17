@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./areas.component.css']
 })
 export class AreasComponent implements OnInit {
+  protected enableBtn = false;
+  protected activar = false;
+
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addNewAreas() {
+    this.activarMenu();
+  }
+
+  activarMenu() {
+    this.activar = !this.activar;
+    this.enableBtn = !this.enableBtn;
   }
 
 }

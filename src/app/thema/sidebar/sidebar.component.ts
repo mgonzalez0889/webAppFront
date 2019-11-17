@@ -40,30 +40,29 @@ export class SidebarComponent implements OnInit {
       icon: 'fas fa-book-open',
       child: true,
       childrens: [
-
+        {
+          descripcion: 'Areas',
+          link: '/pages/biblioteca/areas'
+        },
         {
           descripcion: 'Autores',
           link: '/pages/biblioteca/autores'
-
         },
-
         {
           descripcion: 'Editoriales',
           link: '/pages/biblioteca/editorial'
-
         },
-
+        {
+          descripcion: 'Generos',
+          link: '/pages/biblioteca/generos'
+        },
         {
           descripcion: 'Libros',
-          link: '/pages/biblioteca/libro'
-        }
-
+          link: '/pages/biblioteca/libros'
+        },
       ]
-
     },
-
     {
-
       descripcion: 'Academico',
       link: '',
       icon: 'fas fa-book-reader',
@@ -73,63 +72,45 @@ export class SidebarComponent implements OnInit {
           descripcion: 'Aulas',
           link: '/pages/academico/aulas'
         },
-
         {
           descripcion: 'Docentes',
           link: '/pages/academico/docentes'
         },
-
         {
           descripcion: 'Estudiantes',
           link: '/pages/academico/estudiantes'
         },
-
         {
           descripcion: 'Grados',
           link: '/pages/academico/grados'
         },
-
         {
           descripcion: 'Materias',
           link: '/pages/academico/materias'
-        },
-
-      ],
+        }
+      ]
     },
-
     {
-
       descripcion: 'Administracion',
       link: '',
       icon: 'fas fa-users-cog',
       child: true,
       childrens: [
-
         {
-
           descripcion: 'Modulos',
           link: '/pages/administracion/modulos',
-
         },
-
         {
-
           descripcion: 'Roles',
           link: '/pages/administracion/roles',
-
         },
-
         {
           descripcion: 'Usuarios',
           link: '/pages/administracion/usuarios',
         }
-
         ]
-
     }
-
   ];
-
 }
 
 

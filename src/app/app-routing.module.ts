@@ -5,14 +5,13 @@ import { TemplateComponent } from './thema/template/template.component';
 
 
 const routes: Routes = [
-
    {
      path: 'pages',
      component: TemplateComponent,
      children: [
       {
         path: 'academico',
-        loadChildren: './pages/academico/academico.module#AcademicoModule',
+        loadChildren: './pages/academico/academico.module#AcademicoModule'
       }
 
      ]
@@ -25,16 +24,14 @@ const routes: Routes = [
       {
         path: 'administracion',
         loadChildren: './pages/administracion/administracion.module#AdministracionModule'
-      },
+      }
     ]
 
   },
-
   {
     path: 'auth',
     loadChildren: './auth/auth.module#AuthModule'
   },
-
   {
     path: 'pages',
     component: TemplateComponent,
@@ -55,7 +52,6 @@ const routes: Routes = [
       }
     ]
   },
-
   {
     path: '**',
       children: [

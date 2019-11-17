@@ -1,1 +1,53 @@
-<p>crud-areas works!</p>
+<div class="container">
+  <form  [formGroup]="areas" (ngSubmit)="saveAreas(areas)">
+    <div class="form-group row">
+      <label >Nombre</label>
+      <input type="text"
+             class="form-control"
+             [ngClass]=
+             "{'is-invalid':
+             areas.controls['nombres'].errors?.valid ||
+             areas.controls['nombres'].errors?.minlength,
+             'is-valid': !areas.controls['nombres'].errors}"
+             formControlName="nombres"
+             placeholder="Nombre completo">
+      <div class="alert-danger" *ngIf="areas.dirty || areas.touched">
+        <div  *ngIf="areas.controls['nombres'].errors?.required"
+              class="form-control-feedback">
+          El nombre es requerido
+        </div>
+        <div  *ngIf="areas.controls['nombres'].errors?.minlength"
+              class="form-control-feedback">
+          El nombre minimo son 10 caracteres
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label>Detalles</label>
+      <input type="text"
+             class="form-control"
+             [ngClass]=
+               "{'is-invalid':
+             areas.controls['detalles'].errors?.valid ||
+             areas.controls['detalles'].errors?.minlength,
+             'is-valid': !areas.controls['detalles'].errors }"
+             formControlName="detalles"
+             placeholder="Detalles">
+      <div class="alert-danger" *ngIf="areas.dirty || areas.touched">
+        <div  *ngIf="areas.controls['detalles'].errors?.required"
+              class="form-control-feedback">
+          El nombre es requerido
+        </div>
+        <div  *ngIf="areas.controls['detalles'].errors?.minlength"
+              class="form-control-feedback">
+          El nombre minimo son 10 caracteres
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-outline-danger" (click)="cancelAction()">Cancelar</button> &nbsp;
+        <button type="submit" class="btn btn-outline-success" [disabled]="!areas.valid" >Guardar</button>
+    </div>
+  </form>
+</div>
+

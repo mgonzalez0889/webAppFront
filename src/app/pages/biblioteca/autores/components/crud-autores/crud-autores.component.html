@@ -1,40 +1,51 @@
 <div class="container">
   <form  [formGroup]="autores" (ngSubmit)="saveAutores(autores)">
-    {{ autores.value | json }}
-  <div class="form-group row" [ngClass]="{ 'msgerror': !autores.get('codigo').valid }">
+  <!--<div class="form-group row">
     <label >Codigo</label>
       <input type="text"
              class="form-control"
+             [ngClass]=
+             "{'is-invalid':
+             autores.controls['codigo'].errors?.valid ||
+             autores.controls['codigo'].errors?.minlength,
+             'is-valid': !autores.controls['codigo'].errors }"
              formControlName="codigo"
              placeholder="codigo">
-        <div  *ngIf="autores.controls['codigo'].errors?.required"
-               class="form-control-feedback">
-                El codigo es requerido
-        </div>
-        <div  *ngIf="autores.controls['codigo'].errors?.required"
-              class="form-control-feedback">
+        <div class="alert-danger" *ngIf="autores.dirty || autores.touched " >
+            <div  *ngIf="autores.controls['codigo'].errors?.required">
+              El codigo es requerido
+            </div>
+            <div  *ngIf="autores.controls['codigo'].errors?.minlength" >
               El codigo minimo son 6 numeros
+            </div>
         </div>
-  </div>
-  <div class="form-group" [ngClass]="{ 'has-danger': !autores.get('nombreAutores').valid }">
-    <label >Nombre autores</label>
+  </div>-->
+  <div class="form-group row" >
+    <label >Nombre de autor</label>
       <input type="text"
              class="form-control"
+             [ngClass]=
+             "{'is-invalid':
+             autores.controls['nombreAutores'].errors?.valid ||
+             autores.controls['nombreAutores'].errors?.minlength,
+             'is-valid': !autores.controls['nombreAutores'].errors }"
              formControlName="nombreAutores"
-             placeholder="Nombre autores">
+             placeholder="Nombre completo">
+      <div class="alert-danger" *ngIf="autores.dirty || autores.touched">
         <div  *ngIf="autores.controls['nombreAutores'].errors?.required"
               class="form-control-feedback">
           El nombre es requerido
         </div>
-        <div  *ngIf="autores.controls['nombreAutores'].errors?.required"
+        <div  *ngIf="autores.controls['nombreAutores'].errors?.minlength"
               class="form-control-feedback">
           El nombre minimo son 10 caracteres
         </div>
+      </div>
+  </div>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-outline-danger" (click)="cancelAction()">Cancelar</button> &nbsp;
+        <button type="submit" class="btn btn-outline-success" [disabled]="!autores.valid" >Guardar</button>
     </div>
-
-    <button type="submit" class="btn btn-outline-danger" (click)="cancelAction()">Cancelar</button> &nbsp;
-    <button type="submit" class="btn btn-outline-success" [disabled]="!autores.valid" >Guardar</button>
-
   </form>
 </div>
-{{ autores.valid }}
+

@@ -1,6 +1,8 @@
 <ag-grid-angular
   style="width: 410px; height: 400px;"
   class="ag-theme-balham"
+  (rowClicked)="selected($event)"
+  [enableColResize]="true"
   [rowData]="rowData"
   [columnDefs]="columDefs">
 </ag-grid-angular>

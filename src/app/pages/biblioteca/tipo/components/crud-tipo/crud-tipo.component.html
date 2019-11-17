@@ -1,1 +1,51 @@
-<p>crud-tipo works!</p>
+<div class="container">
+  <form  [formGroup]="generos" (ngSubmit)="saveGeneros(generos)">
+    <div class="form-group row">
+      <label >Nombre</label>
+        <input type="text"
+               class="form-control"
+               [ngClass]=
+               "{'is-invalid':
+               generos.controls['nombres'].errors?.valid ||
+               generos.controls['nombres'].errors?.minlength,
+               'is-valid': !generos.controls['nombres'].errors }"
+               formControlName="nombres"
+               placeholder="Nombre">
+          <div class="alert-danger" *ngIf="generos.dirty || generos.touched " >
+              <div  *ngIf="generos.controls['nombres'].errors?.required">
+                El nombre es requerido
+              </div>
+              <div  *ngIf="generos.controls['nombres'].errors?.minlength" >
+                El nombre minimo son 6 numeros
+              </div>
+          </div>
+    </div>
+    <div class="form-group row" >
+      <label >Detalle</label>
+      <input type="text"
+             class="form-control"
+             [ngClass]=
+               "{'is-invalid':
+             generos.controls['detalles'].errors?.valid ||
+             generos.controls['detalles'].errors?.minlength,
+             'is-valid': !generos.controls['detalles'].errors }"
+             formControlName="detalles"
+             placeholder="Detalles">
+      <div class="alert-danger" *ngIf="generos.dirty || generos.touched">
+        <div  *ngIf="generos.controls['detalles'].errors?.required"
+              class="form-control-feedback">
+          El detalle es requerido
+        </div>
+        <div  *ngIf="generos.controls['detalles'].errors?.minlength"
+              class="form-control-feedback">
+          El detalle minimo son 10 caracteres
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <button type="submit" class="btn btn-outline-danger" (click)="cancelAction()">Cancelar</button> &nbsp;
+      <button type="submit" class="btn btn-outline-success" [disabled]="!generos.valid" >Guardar</button>
+    </div>
+  </form>
+</div>
+

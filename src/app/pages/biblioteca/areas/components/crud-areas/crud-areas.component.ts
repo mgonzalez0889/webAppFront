@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-crud-areas',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudAreasComponent implements OnInit {
 
-  constructor() { }
+  @Output() cancelar: EventEmitter<boolean> = new EventEmitter<boolean>();
+  areas: FormGroup;
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.createForm();
   }
+
+  private createForm() {
+    this.areas = this.fb.group({
+      nombres: ['', [Validators.required] ],
+      detalles: ['', [Validators.required] ]
+    });
+
+  }
+
+  cancelAction() {
+    this.cancelar.emit(true);
+  }
+
+  saveAreas() {
+
+  }
+
 
 }

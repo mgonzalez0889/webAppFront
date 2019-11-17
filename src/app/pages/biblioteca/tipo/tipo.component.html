@@ -1,1 +1,24 @@
-<p>tipo works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row m-2">
+        <button type="button" [disabled]="enableBtn" class="btn btn-outline-primary btn-sm" (click)="addNewGeneros()">Nuevo</button> &nbsp;
+        <button type="button" [disabled]="enableBtn" class="btn btn-outline-info btn-sm" (click)="editGeneros()">Editar</button> &nbsp;
+        <button type="button" [disabled]="enableBtn" class="btn btn-outline-danger btn-sm" (click)="deleteGeneros()">Eliminar</button> &nbsp;
+      </div>
+
+      <app-listar-tipo></app-listar-tipo>
+
+    </div>
+
+    <div class="col-md-6" >
+      <div class="card">
+        <div class="card-header">
+          Registro de generos
+        </div>
+        <app-crud-tipo  (cancel)="activeAdd($event)">
+        </app-crud-tipo>
+      </div>
+    </div>
+  </div>
+</div>

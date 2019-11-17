@@ -13,29 +13,24 @@ const routes: Routes = [
    path: 'editorial',
    component: EditorialComponent
   },
-
   {
    path: 'autores',
    component: AutoresComponent
   },
-
   {
    path: 'areas',
    component: AreasComponent
   },
-
   {
    path: 'existencia',
    component: ExistenciaComponent
   },
-
   {
-  path: 'libro',
+  path: 'libros',
   component: LibroComponent
   },
-
   {
-  path: 'tipo',
+  path: 'generos',
   component: TipoComponent
   },
 

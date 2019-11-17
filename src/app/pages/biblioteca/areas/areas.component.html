@@ -1,1 +1,25 @@
-<p>areas works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row m-2">
+        <button type="button" [disabled]="enableBtn" class="btn btn-outline-primary btn-sm" (click)="addNewAreas()">Nuevo</button> &nbsp;
+        <button type="button" [disabled]="enableBtn" class="btn btn-outline-info btn-sm" (click)="editAreas()">Editar</button> &nbsp;
+        <button type="button" [disabled]="enableBtn" class="btn btn-outline-danger btn-sm" (click)="deleteAreas()">Eliminar</button> &nbsp;
+      </div>
+      <app-listar-areas></app-listar-areas>
+    </div>
+
+    <div class="col-md-6" *ngIf="activar">
+      <div class="card">
+        <div class="card-header">
+          Formulario de Areas
+        </div>
+        <app-crud-areas  (cancelar)="activarMenu($event)">
+        </app-crud-areas>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
