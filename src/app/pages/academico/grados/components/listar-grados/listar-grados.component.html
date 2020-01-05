@@ -1,1 +1,25 @@
-<p>listar-grados works!</p>
+<!--
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Codigo</th>
+    <th scope="col">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories">
+      <td>{{ category.id }}</td>
+      <td>{{ category.description }}</td>
+    </tr>
+  </tbody>
+</table>
+-->
+<ag-grid-angular
+  style="width: 410px; height: 400px;"
+  class="ag-theme-balham"
+  [gridOptions]="gridAreas"
+  (rowClicked)="selectRow($event)"
+  (rowDoubleClicked)="editGrade()"
+  [enableColResize]="true"
+  >
+</ag-grid-angular>

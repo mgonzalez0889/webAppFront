@@ -17,6 +17,7 @@ import { ListarGradosComponent } from './grados/components/listar-grados/listar-
 import { CrudGradosComponent } from './grados/components/crud-grados/crud-grados.component';
 import { CrudMateriasComponent } from './materias/components/crud-materias/crud-materias.component';
 import { ListarMateriasComponent } from './materias/components/listar-materias/listar-materias.component';
+import {AgGridModule} from 'ag-grid-angular';
 
 // Formularios
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -43,6 +44,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AcademicoRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    AgGridModule
 
   ]
 })

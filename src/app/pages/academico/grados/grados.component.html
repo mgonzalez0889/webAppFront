@@ -4,18 +4,24 @@
       <div class="row m-2">
         <button type="button" [disabled]="enableBtn" class="btn btn-outline-primary btn-sm" (click)="addNewGrados()">Nuevo</button> &nbsp;
         <button type="button" [disabled]="enableBtn" class="btn btn-outline-info btn-sm" (click)="editGrados()">Editar</button> &nbsp;
-        <button type="button" [disabled]="enableBtn" class="btn btn-outline-danger btn-sm" (click)="deleteGrados()">Eliminar</button> &nbsp;
+        <button type="button" [disabled]="enableBtn" class="btn btn-outline-danger btn-sm" (click)="deleteGrados(id)">Eliminar</button> &nbsp;
       </div>
-      <app-listar-grados></app-listar-grados>
+      <app-listar-grados
+      [recibe]= "lista"
+      (emitirid)="id=$event">
+
+      </app-listar-grados>
     </div>
 
     <div class="col-md-6" *ngIf="activar">
       <div class="card">
         <div class="card-header">
-          Formulario de Areas
+          Registro de Areas
         </div>
-        <app-crud-grados  (cancelar)="activarMenu($event)">
-        </app-crud-grados>
+        <app-crud-grados
+          (cancelar)="activarMenu($event)"
+          (emitirListado)="lista = $event">
+        </app-crud-grados  >
 
       </div>
 

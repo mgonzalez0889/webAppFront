@@ -1,24 +1,24 @@
 <div class="container">
-  <form  [formGroup]="grados" (ngSubmit)="saveGrados(grados)">
+  <form  [formGroup]="grados" (ngSubmit)="saveGrados(grados.value)">
     <div class="form-group row">
       <label >Nombre</label>
       <input type="text"
              class="form-control"
              [ngClass]=
                "{'is-invalid':
-             grados.controls['nombres'].errors?.valid ||
-             grados.controls['nombres'].errors?.minlength,
-             'is-valid': !grados.controls['nombres'].errors}"
-             formControlName="nombres"
+             grados.controls['description'].errors?.valid ||
+             grados.controls['description'].errors?.minlength,
+             'is-valid': !grados.controls['description'].errors}"
+             formControlName="description"
              placeholder="Nombre completo">
       <div class="alert-danger" *ngIf="grados.dirty || grados.touched">
-        <div  *ngIf="grados.controls['nombres'].errors?.required"
+        <div  *ngIf="grados.controls['description'].errors?.required"
               class="form-control-feedback">
           El nombre es requerido
         </div>
-        <div  *ngIf="grados.controls['nombres'].errors?.minlength"
+        <div  *ngIf="grados.controls['description'].errors?.minlength"
               class="form-control-feedback">
-          El nombre minimo son 10 caracteres
+          El nombre minimo son 6 caracteres
         </div>
       </div>
     </div>

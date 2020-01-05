@@ -14,6 +14,7 @@ import { GenericoComponent } from './shared/generico/generico.component';
 import { AgGridModule } from 'ag-grid-angular';
 import {HttpClientModule} from '@angular/common/http';
 import {CategoryGradeService} from './data/category-grade.service';
+import {AuthService} from "@data/auth.service";
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import {CategoryGradeService} from './data/category-grade.service';
     AgGridModule.withComponents([])
 
   ],
-  providers: [CategoryGradeService],
+  providers: [CategoryGradeService, AuthService],
   exports: [
     GenericoComponent
   ],

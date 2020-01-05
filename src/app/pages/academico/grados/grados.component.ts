@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {CategoryGradeService} from "@data/category-grade.service";
+
 
 @Component({
   selector: 'app-grados',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grados.component.css']
 })
 export class GradosComponent implements OnInit {
+  lista: boolean;
+  @Input() recibe: number;
+  id: number;
   protected enableBtn = false;
   protected activar = false;
 
-  constructor() { }
+  constructor(private gradeService: CategoryGradeService) { }
 
   ngOnInit() {
   }
@@ -25,6 +30,17 @@ export class GradosComponent implements OnInit {
 
   }
 
+  editGrados() {
+    console.log('Comienza el editar');
+  }
+
+  deleteGrados(id) {
+    this.gradeService.deleteCategoryGrade(id)
+        .subscribe( res => {
+        alert('Registro eliminado con exito');
+    });
+
+  }
 
 
 }

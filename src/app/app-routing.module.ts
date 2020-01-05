@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { TemplateComponent } from './thema/template/template.component';
-
+import { AdminguardGuard } from "./shared/guards/adminguard.guard";
 
 const routes: Routes = [
    {
@@ -11,6 +11,7 @@ const routes: Routes = [
      children: [
       {
         path: 'academico',
+        canActivate: [AdminguardGuard],
         loadChildren: './pages/academico/academico.module#AcademicoModule'
       }
 
